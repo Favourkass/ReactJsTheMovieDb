@@ -12,7 +12,7 @@ function Movies() {
   const [numOfPages, setNumOfPages] = React.useState(true);
   const [selectedGenres, setSelectedGenres] = React.useState([]);
   const [genres, setGenres] = React.useState([]);
-  const genreforURL = useGenres(selectedGenres)
+  const genreforURL = useGenres(selectedGenres);
 
   const fetchMovies = async () => {
     const { data } = await axios.get(
@@ -23,8 +23,8 @@ function Movies() {
     console.log(data.results);
   };
   useEffect(() => {
-     // eslint-disable-next-line
     fetchMovies();
+    // eslint-disable-next-line 
   }, [page, genreforURL]);
   return (
     <div>
